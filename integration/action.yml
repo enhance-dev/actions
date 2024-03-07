@@ -31,7 +31,10 @@ runs:
       - name: Use local package
         if: inputs.use_local_package == 'true'
         shell: bash
-        run: echo ${{ inputs.use_local_package }}
+        run: |
+          cd myproject
+          npm install ..
+          cd ..
 
       - name: Test
         shell: bash
