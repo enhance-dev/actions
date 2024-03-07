@@ -28,6 +28,10 @@ runs:
         shell: bash
         run: npm install @architect/sandbox tap-arc tape tiny-json-http
 
+      - name: Use local package
+        shell: bash
+        run: echo ${{ inputs.use_local_package }}
+
       - name: Test
         shell: bash
         run: npx tape './integration-tests/integration/test/**/*-test.mjs' | npx tap-arc
