@@ -10,10 +10,11 @@ const endpoints = [
   '/_public/favicon.svg',
 ]
 
-process.chdir('./myproject');
+process.chdir('./myproject')
+console.log(process.cwd())
 
 test('startup sandbox', async (t) => {
-    t.pass(await start({ quiet: true }))
+    t.pass(await start({ quiet: true, cwd: process.cwd() }))
 })
 
 test('check key paths', async (t) => {
