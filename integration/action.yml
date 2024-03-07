@@ -11,13 +11,13 @@ runs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
 
-      - name: npm install
-        shell: bash
-        run: npm install @architect/sandbox tap-arc tape tiny-json-http
-
       - name: Create Starter Project
         shell: bash
         run: npx "@enhance/cli@latest" new ./myproject -y
+
+      - name: npm install
+        shell: bash
+        run: npm install @architect/sandbox tap-arc tape tiny-json-http
 
       - name: Test
         shell: bash
