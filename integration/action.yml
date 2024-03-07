@@ -2,6 +2,12 @@ name: 'Enhance Integration Tests'
 author: 'Enhance Team'
 description: 'GitHub Action for running integration tests on Enhance'
 
+inputs:
+  use_local_package:
+    description: 'Install the local github package for testing'
+    required: false
+    default: false
+
 runs:
   using: 'composite'
   steps:
