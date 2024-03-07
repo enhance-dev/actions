@@ -20,4 +20,5 @@ runs:
         run: npx "@enhance/cli@latest" new ./myproject -y
 
       - name: Test
+        shell: bash
         run: npx tape 'test/**/*-test.mjs' | npx tap-arc
