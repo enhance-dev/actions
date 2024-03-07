@@ -1,0 +1,23 @@
+name: 'Enhance Integration Tests'
+author: 'Enhance Team'
+description: 'GitHub Action for running integration tests on Enhance'
+
+runs:
+  using: 'composite'
+  steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: npm install
+        shell: bash
+        run: npm install @architect/sandbox tap-arc tape tiny-json-http
+
+      - name: Create Starter Project
+        shell: bash
+        run: npx "@enhance/cli@latest" new ./myproject -y
+
+      - name: Test
+        run: npx tape 'test/**/*-test.mjs' | npx tap-arc
