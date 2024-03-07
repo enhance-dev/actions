@@ -30,4 +30,4 @@ runs:
 
       - name: Test
         shell: bash
-        run: npx tape './integration-tests/test/**/*-test.mjs' | npx tap-arc
+        run: npx tape './integration-tests/integration/test/**/*-test.mjs' | npx tap-arc
