@@ -11,10 +11,11 @@ const endpoints = [
 ]
 
 process.chdir('./myproject')
-console.log(process.cwd())
+let cwd = process.cwd()
+console.log(cwd)
 
 test('startup sandbox', async (t) => {
-    t.pass(await start({ quiet: true, cwd: process.cwd() }))
+    t.pass(await start({ quiet: true, cwd }))
 })
 
 test('check key paths', async (t) => {
