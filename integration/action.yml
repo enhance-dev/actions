@@ -29,7 +29,7 @@ runs:
         run: npm install @architect/sandbox tap-arc tape tiny-json-http
 
       - name: Use local package
-        if: inputs.use_local_package == true
+        if: inputs.use_local_package == 'true'
         shell: bash
         run: echo ${{ inputs.use_local_package }}
 
