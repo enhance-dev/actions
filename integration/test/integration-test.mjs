@@ -27,3 +27,5 @@ test('check key paths', async (t) => {
 test('shutdown sandbox', async (t) => {
     t.pass(await end())
 })
+
+process.chdir('..');
